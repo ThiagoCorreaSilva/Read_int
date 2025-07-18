@@ -1,5 +1,8 @@
+#![doc = include_str!("../README.md")]
+ 
 use std::str::FromStr;
 
+/// Function to get a numeric value "T" from user input!
 pub fn generic_read<T: FromStr>(text: &Option<&str>) -> Option<T>
 {
     if text.is_some()
@@ -17,6 +20,7 @@ pub fn generic_read<T: FromStr>(text: &Option<&str>) -> Option<T>
     }
 }
 
+/// Function to get bool value from user input!
 pub fn bool_read(text: &Option<&str>) -> bool
 {
     if text.is_some()
@@ -37,6 +41,7 @@ pub fn bool_read(text: &Option<&str>) -> bool
     }
 }
 
+/// Function to get vector from a numeric type
 pub fn vec_read<T: FromStr>(text: &Option<&str>) -> Option<Vec<T>>
 {
     if text.is_some()

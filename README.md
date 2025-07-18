@@ -3,7 +3,7 @@ A simple Rust crate for getting user input
 
 ## About
 ### This crate is made for helping in getting user inputs in other types than String!
-#### Supported types:
+**Supported types:**
 - unsigned
 - signed
 - float

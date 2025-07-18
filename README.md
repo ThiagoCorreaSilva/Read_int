@@ -8,7 +8,6 @@ A simple Rust crate for getting user input
    - unsigned
    - signed
    - float
-   - bool
 - **vec_read:**
   - unsigned
   - signed

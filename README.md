@@ -2,7 +2,7 @@
 A simple Rust crate for getting user input
 
 # About
-### This crate is made for helping in getting user inputs in others types!
+**This crate was made for helping in getting user inputs in others types!**
 **Supported types:**
 - unsigned
 - signed

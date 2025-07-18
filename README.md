@@ -1,8 +1,8 @@
 # Read_int
 A simple Rust crate for getting user input
 
-## About
-### This crate is made for helping in getting user inputs in other types than String!
+# About
+### This crate is made for helping in getting user inputs in others types!
 **Supported types:**
 - unsigned
 - signed
@@ -10,7 +10,7 @@ A simple Rust crate for getting user input
 - bool
 - vector
 
-## Functions:
+# Functions:
 
 ### Numbers: 
 <img width="775" height="30" alt="image" src="https://github.com/user-attachments/assets/0d3e4907-5921-4285-90cf-aecba0173c3d" />

@@ -27,7 +27,7 @@ pub fn bool_read(text: &Option<&str>) -> bool
     let mut buffer = String::new();
     std::io::stdin().read_line(&mut buffer).expect("Error in reading!");
 
-    if buffer.contains("yes")
+    if buffer.to_lowercase().contains("yes")
     {
         true
     }
@@ -46,9 +46,16 @@ mod tests
     fn numbers()
     {
         let result = generic_read::<i32>(&Some("With text"));
-        println!("Generic: {}", result.unwrap());
+        println!("I32 result: {}", result.unwrap());
 
         let result = generic_read::<u32>(&None);
-        println!("Generic: {}",  result.unwrap());
+        println!("U32 result: {}", result.unwrap());
+    }
+
+    #[test]
+    fn bool()
+    {
+        let result = bool_read(&None);
+        println!("Bool: {}", result);
     }
 }

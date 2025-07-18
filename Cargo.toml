@@ -2,7 +2,9 @@
 name = "read_int"
 version = "0.2.3"
 edition = "2024"
-description = "Simple library to get integer (i32) from user input"
+description = "Simple library to get user input in any primitive type"
 license = "GPL-2.0-or-later WITH Bison-exception-2.2"
+readme = "README.md"
+repository = "https://github.com/ThiagoCorreaSilva/Read_int"
 
 [dependencies]

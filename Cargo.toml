@@ -1,0 +1,8 @@
+[package]
+name = "read_int"
+version = "0.2.3"
+edition = "2024"
+description = "Simple library to get integer (i32) from user input"
+license = "GPL-2.0-or-later WITH Bison-exception-2.2"
+
+[dependencies]

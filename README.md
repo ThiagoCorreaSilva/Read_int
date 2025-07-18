@@ -3,12 +3,19 @@ A simple Rust crate for getting user input
 
 # About
 **This crate was made for helping in getting user inputs in others types!**  
-**Supported types:**
-- unsigned
-- signed
-- float
-- bool
-- vector
+**Supported types:**  
+- **generic_read:**
+   - unsigned
+   - signed
+   - float
+   - bool
+- **vec_read:**
+  - unsigned
+  - signed
+  - float
+  - bool
+  - char
+  - String
 
 # Functions:
 

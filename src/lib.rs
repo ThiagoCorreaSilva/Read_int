@@ -37,25 +37,79 @@ pub fn bool_read(text: &Option<&str>) -> bool
     }
 }
 
+pub fn vec_read<T: FromStr>(text: &Option<&str>) -> Option<Vec<T>>
+{
+    if text.is_some()
+    {
+        println!("{}", text.unwrap());
+    }
+
+    let mut vector: Vec<T> = vec![];
+    let mut buffer = String::new();
+
+    match std::io::stdin().read_line(&mut buffer)
+    {
+        Err(error) => { println!("Error in reading input: {}", error.to_string()); return None },
+        _ => {}
+    }
+
+    let formated_string = buffer.trim().split_whitespace();
+
+    for word in formated_string
+    {
+        match word.parse::<T>()
+        {   
+            Ok(result) => vector.push(result),
+            _ => { println!("Error in: \"{}\"", word); vector.clear(); break }
+        }
+    }
+
+    if vector.is_empty()
+    {
+        println!("Error in converting to vector!");
+        return None
+    }
+
+    Some(vector)
+}
+
 #[cfg(test)]
 mod tests
 {
     use crate::*;
 
-    #[test]
     fn numbers()
     {
-        let result = generic_read::<i32>(&Some("With text"));
-        println!("I32 result: {}", result.unwrap());
+        let result = generic_read::<i32>(&Some("Insert an integer"));
+        println!("Result with text: {}", result.unwrap());
+        println!("");
 
-        let result = generic_read::<u32>(&None);
-        println!("U32 result: {}", result.unwrap());
+        let result = generic_read::<i32>(&None);
+        println!("Result without text: {}", result.unwrap());
+
+        println!("");
+    }
+
+    fn bool()
+    {
+        let result = bool_read(&Some("Type yes or no"));
+        println!("Result bool: {}", result);
+        println!("");
+    }
+
+    fn vector()
+    {
+        let result = vec_read::<i32>(&Some("Put a list of numbers"));
+
+        println!("Result vector {:#?}", result.unwrap());
+        println!("");
     }
 
     #[test]
-    fn bool()
+    fn testing()
     {
-        let result = bool_read(&None);
-        println!("Bool: {}", result);
+        numbers();
+        bool();
+        vector();
     }
 }
